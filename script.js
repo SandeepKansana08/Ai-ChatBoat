@@ -2,7 +2,8 @@ let prompt=document.querySelector("#prompt");
 let chatContainer=document.querySelector(".chat-container");
 let imagebtn=document.querySelector("#image");
 let image=document.querySelector("#image img");
-let imageInput=document.querySelector("#image input")
+let imageInput=document.querySelector("#image input");
+let submitBtn=document.querySelector("#submit");
 
 const apiUrl="https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=AIzaSyDPJ7W-sPK-jOYHyLpjY2JnW9zpbniPWy8"
 
@@ -108,5 +109,9 @@ imageInput.addEventListener("change",()=>{
 
 imagebtn.addEventListener("click",()=>{
     imagebtn.querySelector("input").click()
+});
+
+submitBtn.addEventListener("click",()=>{
+    handleChatResponse(prompt.value)
 });
 
